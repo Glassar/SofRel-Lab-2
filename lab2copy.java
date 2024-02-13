@@ -10,7 +10,7 @@ import java.util.*;
  */
 
 
-public class lab2 {
+public class lab2copy {
 
     public static void sort (int array[])
     {
