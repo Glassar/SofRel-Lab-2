@@ -49,7 +49,7 @@ public class lab2 {
         }
     }
 
-    int search (int array[], int key){
+    public int search (int array[], int key){
         sort(array);
         for (int i : array) {
             System.out.println(i);
