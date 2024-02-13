@@ -10,7 +10,7 @@ public class test {
 
     static void randomTests(int numTests, int arrayLength, int intRange) throws IOException{
 
-        FileWriter fw = new FileWriter("random_test_cases.txt"); 
+        FileWriter fw = new FileWriter("random_test_cases500.txt"); 
         Random rand = new Random();
         
         
@@ -27,7 +27,7 @@ public class test {
     }
 
     static void pairwiseTests(int arrayLength, int defaultValue, int[] keys) throws IOException {
-        FileWriter fw = new FileWriter("pair_wise_test_cases.txt"); 
+        FileWriter fw = new FileWriter("pair_wise_test_cases500.txt"); 
 
         int tmp[] = new int[arrayLength];
 
@@ -57,9 +57,7 @@ public class test {
     }
 
     public static void main(String[] args) throws IOException {
-        randomTests(100, 15, 15);
-        pairwiseTests(15, 0, new int[]{1, 0, 3, 5, 15});
-
-
+        randomTests(100, 500, 500);
+        pairwiseTests(500, 0, new int[]{1, 0, 10, 500});
     }
 }

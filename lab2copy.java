@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.util.*; 
 
 /**
- * lab2
+ * lab2copy
  */
 
 
@@ -18,9 +18,9 @@ public class lab2copy {
             if (array[i] > array[i+1]) {
                 int temp = array[i];
                 array[i] = array[i+1];
-                array[i+1] = temp;
+                array[i+1] = temp; // OBS array[i] instead of temp
                 for (int j = i; j > 0; j--) {
-                    if (array[j] < array[j-1]) {
+                    if (array[j] < array[j-1]) { // OBS > instead of <
                         int temp2 = array[j];
                         array[j] = array[j-1];
                         array[j-1] = temp2;
@@ -37,17 +37,17 @@ public class lab2copy {
     public static boolean binarySearch (int array[], int key){
 
         int x = -1;
-        int l = 0;
+        int l = 0; // OBS l = 1 instead of 0
         int r = array.length-1;
 
         do {
             x = (l+r)/2;
-            if(key<array[x]){
+            if(key < array[x]){ // OBS > instead of <
                 r = x-1;
             } else {
                 l = x+1;
             }
-        } while (!(key == array[x]) && !(l > r));
+        } while (!(key == array[x]) && !(l > r)); // OBS || instead of && // OBS >= instead of >
 
         if(key == array[x]){
             return true;
@@ -90,7 +90,7 @@ public class lab2copy {
             if (search == contains) {
                 counter_tests +=1;
             } else {
-                System.out.println("Test # " + i + " failed. With key: " + key +" and array:" );
+                System.out.println("Test # " + (i+1) + " failed. With key: " + key +" and array:" );
                 System.out.println(Arrays.toString(tmp));
                 System.out.println("Expected: " + contains + " but got: " + search +"\n");
             }
@@ -103,14 +103,12 @@ public class lab2copy {
 
     public static void main(String[] args) throws IOException 
     {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("Running pair-wise tests...");
-            runTests("pair_wise_test_cases.txt", 10*i);
+        System.out.println("Running pair-wise tests...");
+        runTests("pair_wise_test_cases.txt", 100);
 
-            System.out.println("\nRunning random tests...");
-            runTests("random_test_cases.txt", 10*i);
-            System.out.println("\n");
-        }
+        System.out.println("\nRunning random tests...");
+        runTests("random_test_cases3.txt", 100);
     }
+    
     
 }

@@ -90,7 +90,7 @@ public class lab2 {
             if (search == contains) {
                 counter_tests +=1;
             } else {
-                System.out.println("Test # " + i + " failed. With key: " + key +" and array:" );
+                System.out.println("Test # " + (i+1) + " failed. With key: " + key +" and array:" );
                 System.out.println(Arrays.toString(tmp));
                 System.out.println("Expected: " + contains + " but got: " + search +"\n");
             }
@@ -103,14 +103,17 @@ public class lab2 {
 
     public static void main(String[] args) throws IOException 
     {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("Running pair-wise tests...");
-            runTests("pair_wise_test_cases.txt", 10*i);
+        System.out.println("Running pair-wise tests...");
+        runTests("pair_wise_test_cases.txt", 165);
 
-            System.out.println("\nRunning random tests...");
-            runTests("random_test_cases.txt", 10*i);
-            System.out.println("\n");
-        }
+        System.out.println("\nRunning random tests 1...");
+        runTests("random_test_cases1.txt", 100);
+
+        System.out.println("\nRunning random tests 2...");
+        runTests("random_test_cases2.txt", 100);
+
+        System.out.println("\nRunning random tests 3...");
+        runTests("random_test_cases3.txt", 100);
     }
     
 }
