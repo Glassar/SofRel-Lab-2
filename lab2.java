@@ -107,7 +107,7 @@ public class lab2 {
         runTests("pair_wise_test_cases.txt", 165);
 
         System.out.println("\nRunning random tests 1...");
-        runTests("random_test_cases1.txt", 100);
+        runTests("random_test_cases.txt", 100);
 
         System.out.println("\nRunning random tests 2...");
         runTests("random_test_cases2.txt", 100);

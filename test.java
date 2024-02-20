@@ -10,17 +10,23 @@ public class test {
 
     static void randomTests(int numTests, int arrayLength, int intRange) throws IOException{
 
-        FileWriter fw = new FileWriter("random_test_cases500.txt"); 
+        FileWriter fw = new FileWriter("random_test_cases.txt"); 
         Random rand = new Random();
         
         
         for (int index = 0; index < numTests; index++) {
             int tmp[] = new int[arrayLength];
             for (int i = 0; i < tmp.length; i++) {
-                tmp[i] = rand.nextInt(intRange);
+                tmp[i] = rand.nextInt();
             }
             fw.write(Arrays.toString(tmp) + "\n");
-            fw.write(rand.nextInt(intRange) + "\n");
+            if(rand.nextBoolean())
+            {
+                fw.write(tmp[rand.nextInt(arrayLength)] + "\n");
+            } else {
+                fw.write(rand.nextInt() + "\n");
+            }
+
             
         }
         fw.close(); 
@@ -57,7 +63,7 @@ public class test {
     }
 
     public static void main(String[] args) throws IOException {
-        randomTests(100, 500, 500);
-        pairwiseTests(500, 0, new int[]{1, 0, 10, 500});
+        randomTests(100, 15, 500);
+        //pairwiseTests(500, 0, new int[]{1, 0, 10, 500});
     }
 }
